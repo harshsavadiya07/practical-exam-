@@ -1,0 +1,53 @@
+INTERNAL PRACTICAL EXAM — BUG REPORT
+
+Enrollment No.: 25CS094
+Student Name: Harsh Savadiya
+Assigned Task: Task 3 - Product Order
+Date: 26/08/2026
+
+Instructions:
+For each correction, briefly state the original problem, your correction,
+and why the correction was required. Keep the explanation precise.
+
+---------------------------------------------------------------------------
+Bug No. | Level | Error / Problem Found | Correction Made | Reason
+---------------------------------------------------------------------------
+
+1. | Simple | Heading was not center aligned. | Changed "text-align center" to "text-align: center". | Correct CSS syntax is required for center alignment.
+
+2. | Simple | Order box CSS was not applied. | Changed "orderBox" to "#orderBox". | The order box uses an ID, so # is required in the CSS selector.
+
+3. | Simple | Padding was not working correctly. | Changed "padding: 20" to "padding: 20px". | A proper CSS unit is required for the padding value to work.
+
+4. | Simple | Generate Bill button was not calling the function. | Changed "calculate()" to "calculateBill()". | The existing JavaScript function is named calculateBill(), so the onclick had to match it.
+
+5. | Simple | Customer name could not be accessed. | Changed "getElementByID()" to "getElementById()". | getElementById() is the correct DOM method (JavaScript is case-sensitive).
+
+6. | Medium | Product was not retrieved correctly. | Changed "products" to "product" in the JavaScript. | The JavaScript ID must exactly match the HTML element ID ("product").
+
+7. | Medium | Quantity accepted normal text. | Changed the input type from "text" to "number" and added min="1". | Quantity should only accept a positive numeric value.
+
+8. | Medium | Mobile price was incorrect in JavaScript. | Changed the price from 2000 to 20000. | The correct Mobile price shown in the dropdown is Rs. 20000.
+
+9. | Medium | Bill was not displayed in the correct container. | Changed "bill" to "billBox" in the DOM update. | billBox is the actual ID of the HTML container meant to hold the bill.
+
+10. | Medium | Required fields were not properly validated. | Added separate validation checks for Customer Name, Product and Quantity, each with its own alert. | The order must not proceed if any required field is missing.
+
+11. | Difficult | Total was calculated using addition. | Changed "price + quantity" to "price * quantity". | Total Amount must be Product Price × Quantity, not their sum.
+
+12. | Difficult | Invalid quantity was not rejected. | Added validation to reject empty, zero, negative and non-numeric quantity values using isNaN() and a numeric comparison. | Quantity must be a valid number greater than zero before the bill can be generated.
+
+13. | Difficult | Customer type accepted invalid values. | Added validation so only "Regular" or "Premium" are accepted, and empty/cancelled prompt input stops the process. | Only these two customer types are valid as per requirements.
+
+14. | Difficult | Confirmation message asked about cancelling the order. | Changed the confirm() message to "Do you want to place this order?" and handled OK/Cancel separately. | This matches the required confirmation flow (OK generates the bill, Cancel stops it with an alert).
+
+15. | Difficult | Complete billing flow was not working correctly. | Corrected the entire sequence: Read Input → Validate Customer → Validate Product → Validate Quantity → Determine Price → Calculate Total → Ask Customer Type → Ask Confirmation → Generate Bill → Display Success Alert. | The program must follow this exact required order to work correctly end-to-end.
+
+---------------------------------------------------------------------------
+Conclusion:
+I identified and corrected all 15 bugs (5 Simple, 5 Medium, 5 Difficult) in the
+supplied Product Order program. I tested the corrected file in the browser
+using Customer: Harsh, Product: Mobile, Quantity: 2, Customer Type: Regular,
+which correctly produced Price: Rs. 20000, Total Amount: Rs. 40000. I also
+verified that selecting Cancel at the confirmation step stops the bill from
+being generated.
